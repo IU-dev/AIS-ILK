@@ -13,10 +13,11 @@ require_once 'includes/header.inc.php';
     <br>
     <h3>Автоматизированная информационная система</h3>
     <h1>Измерение личностных качеств</h1>
-    <h3>(АИС ИЛК)</h3>
+    <h3>(АИС ИЛК)</h3><br>
     <div class="alert alert-info" role="alert">
         <h3>Добро пожаловать!</h3>
         <em>Текущая версия системы: Alpha</em><br>
+        <?php echo $db->get_global_set(season_name); ?>
     </div>
     <br><br>
     <h3>Новости системы:</h3>

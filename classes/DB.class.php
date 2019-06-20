@@ -51,6 +51,14 @@ class DB
         return $this->processRowSet($result);
     }
 
+    public function get_global_set($global_name){
+        $connection = $this->connect_get();
+        $sql = "SELECT * FROM 'globals' WHERE named='".$global_name."'";
+        $result = mysqli_query($connection, $sql);
+        $res = $this->processRowSet($result, true);
+        return $res['value'];
+    }
+
     public function counter($table, $where)
     {
         $connection = $this->connect_get();
