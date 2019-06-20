@@ -4,10 +4,10 @@
 class DB
 {
 
-    protected $db_name = 'admin_ratdb';
-    protected $db_user = 'admin_rat';
-    protected $db_pass = 'P@ssw0rd';
-    protected $db_host = '185.159.131.231';
+    protected $db_name = 'monitordb';
+    protected $db_user = 'monitor';
+    protected $db_pass = 'P@ssw0rdgim24';
+    protected $db_host = 'localhost';
 
     // Открывает соединение к БД. Убедитесь, что
     // эта функция вызывается на каждой странице

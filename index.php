@@ -11,13 +11,12 @@ require_once 'includes/header.inc.php';
 <body>
 <center>
     <br>
-    <h1>Рейтинг 2.0</h1>
+    <h3>Автоматизированная информационная система</h3>
+    <h1>Измерение личностных качеств</h1>
+    <h3>(АИС ИЛК)</h3>
     <div class="alert alert-info" role="alert">
         <h3>Добро пожаловать!</h3>
-        <em>Текущая версия системы: R1.4 (Beta)</em><br>
-        <?php if (isset($_SESSION['grand'])) : ?>
-            <h5>Сейчас Вы находитесь в мероприятии: <?php echo $_SESSION['grand']['name']; ?></h5>
-        <?php endif ?>
+        <em>Текущая версия системы: Alpha</em><br>
     </div>
     <br><br>
     <h3>Новости системы:</h3>
