@@ -18,6 +18,19 @@
     color: #5a5a5a;
 }
 
+.machine_text {
+    background: lightgrey;
+    font-family: Consolas;
+}
+
+.itogs{
+    width: 5em;
+}
+
+.fixed-5em{
+    width: 5em;
+}
+
 table.dataTable thead .sorting:after,
 table.dataTable thead .sorting:before,
 table.dataTable thead .sorting_asc:after,

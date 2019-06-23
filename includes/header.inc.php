@@ -47,9 +47,9 @@
                     </div>
                 </li>
             <?php if ($user->admin == 1) : ?>
-            <li class="nav-item">
+                <!--- TODO: Make beautiful admin panel!!! <li class="nav-item">
                 <a class="btn btn-outline-light waves-effect btn-sm" href="admin.php" role="button">Админка</a>
-            </li>
+            </li> --->
             <?php endif ?>
             <?php endif ?>
         </ul>

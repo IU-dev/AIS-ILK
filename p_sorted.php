@@ -70,7 +70,7 @@ $user = unserialize($_SESSION['user']);
                 echo '<td>' . $part['id'] . '</td>';
                 echo '<td>' . $part['eis'] . '</td>';
                 echo '<td>' . $part['fio'] . '</td>';
-                echo '<td><a class="badge badge-primary" href="card.php?idtype=local&stid=' . $part['id'] . '"> посмотреть карту</a></td>';
+                echo '<td><a class="badge badge-primary" href="card.php?idtype=local&submit=&stid=' . $part['id'] . '"> посмотреть карту</a></td>';
             }
             echo '</table>';
             ?>
