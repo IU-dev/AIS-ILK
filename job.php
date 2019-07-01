@@ -15,6 +15,7 @@ if (isset($_GET['id'])) {
     $stud = $db->select('students', "id = '" . $job['belongs'] . "'");
     $usvr = $userTools->get($job['loaded_by_id']);
     $checker = $userTools->get($job['human_id']);
+    $mjb = $db->select('jobs_global', "id = '".$job['global_job_id']."'");
 } else {
     die('Hacking attempt.');
 }
@@ -41,23 +42,23 @@ $user = unserialize($_SESSION['user']);
         <tbody>
         <tr>
             <th><strong>ФИО участника</strong></th>
-            <th><strong><?php echo $stud['fio'] . ' (ЕИС-' . $stud['eis'] . ')'; ?></strong></th>
+            <th><strong><?php echo $stud['fio'] . ' </strong><span class="badge badge-primary">ЕИС-' . $stud['eis'] . '</span>'; ?></th>
         </tr>
         <tr>
             <th>Наименование</th>
-            <th><?php echo $job['jobname'] . ' (MJG-' . $job['global_job_id'] . ')'; ?></th>
+            <th><?php echo $mjb['jobname'] . ' <span class="badge badge-primary">MJG-'.$mjb['id'].'</span>'; ?></th>
+        </tr>
+        <tr>
+            <th>Описание работы</th>
+            <th><?php echo $mjb['description']; ?></th>
         </tr>
         <tr>
             <th>Дата проведения работы</th>
             <th><?php echo $job['date']; ?></th>
         </tr>
         <tr>
-            <th>Описание работы</th>
-            <th><?php echo $job['description']; ?></th>
-        </tr>
-        <tr>
             <th>Добавлена в ИС</th>
-            <th><?php echo $job['input_datetime'] . ' <em>(' . $usvr->f . ' ' . $usvr->i . ' ' . $usvr->o . ', USR-' . $usvr->id . ')</em>'; ?></th>
+            <th><?php echo $job['input_datetime'] . ' <em>(' . $usvr->f . ' ' . $usvr->i . ' ' . $usvr->o . '</em> <span class="badge badge-primary">USR-' . $usvr->id . '</span><em> )</em>'; ?></th>
         </tr>
         </tbody>
     </table>
@@ -89,7 +90,7 @@ $user = unserialize($_SESSION['user']);
         <tbody>
         <tr>
             <th class="machine_text"><?php echo $job['machine_text']; ?></th>
-            <th><?php echo $job['human_text'] . '<br><em>(проверяющий ' . $checker->f . ' ' . $checker->i . ' ' . $checker->o . ', USR-' . $checker->id . ')</em>' ?></th>
+            <th><?php echo $job['human_text'] . '<br><em>(проверяющий ' . $usvr->f . ' ' . $usvr->i . ' ' . $usvr->o . '</em> <span class="badge badge-primary">USR-' . $usvr->id . '</span><em> )</em>'; ?></th>
         </tr>
         </tbody>
     </table>

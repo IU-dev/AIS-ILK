@@ -16,7 +16,7 @@ require_once 'includes/header.inc.php';
     <h3>(АИС ИЛК)</h3><br>
     <div class="alert alert-info" role="alert">
         <h3>Добро пожаловать!</h3>
-        <em>Текущая версия системы: Alpha</em><br>
+        <em>Текущая версия системы: Alpha 2</em><br>
         <?php echo $db->get_global_set(season_name); ?>
     </div>
     <br><br>

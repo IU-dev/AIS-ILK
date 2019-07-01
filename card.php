@@ -47,7 +47,35 @@ $user = unserialize($_SESSION['user']);
         ?></h4>
     <br><br>
     <h3>Текущий рейтинг: 0,00</h3><br><br>
-    <br><br><br>Здесь будет информация о мониторинговых работах<br><br><br><br>Здесь будет информация о мероприятиях
+    <h4>Сведения о мониторинговых работах:</h4>
+    <table class="table table-hover table-sm">
+        <thead>
+        <tr>
+            <th scope="col">№</th>
+            <th scope="col">MJB</th>
+            <th scope="col">Наименование</th>
+            <th scope="col">Процент</th>
+            <th scope="col">Оценка</th>
+            <th scope="col">Действие</th>
+        </tr>
+        </thead>
+        <?php
+        $jobs = $db->select_fs('jobs_info', "belongs = '".$spart['id']."'");
+        echo '<tbody>';
+        $i = 1;
+        foreach($jobs as $job){
+            $mjb = $db->select('jobs_global', "id = '".$job['global_job_id']."'");
+            echo '<tr>';
+            echo '<td>'.$i.'</td>';
+            echo '<td><span class="badge badge-primary">MJB-'.$mjb['id'].'</span></td>';
+            echo '<td>'.$mjb['jobname'].'</td>';
+            echo '<td>'.$job['percent'].'</td>';
+            echo '<td>'.$job['mark'].'</td>';
+            echo '<td><a class="badge badge-info" href="job.php?id='.$job['id'].'">посмотреть работу</a></td>';
+            $i = $i + 1;
+        }
+        echo '</tbody></table>';
+        ?>
 </center>
 <?php endif ?>
 <?php require_once 'includes/footer.inc.php'; ?>
